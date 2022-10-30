@@ -120,61 +120,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int counter = 0;
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin, RESET);
-		  HAL_GPIO_WritePin(GPIOA, LED_YELLOW_Pin, SET);
-		  HAL_GPIO_WritePin(GPIOA, LED_GREEN_Pin, SET);
-
-		  HAL_GPIO_WritePin(GPIOA, LED_RED1_Pin, SET);
-		  HAL_GPIO_WritePin(GPIOA, LED_YELLOW1_Pin, SET);
-		  HAL_GPIO_WritePin(GPIOA, LED_GREEN1_Pin, RESET);
-		  display7Seg(5);
-		  HAL_Delay(1000);
-		  display7Seg(4);
-		  HAL_Delay(1000);
-		  display7Seg(3);
-		  HAL_Delay(1000);
-		  /*----------*/
-	  	  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin, RESET);
-		  HAL_GPIO_WritePin(GPIOA, LED_YELLOW_Pin, SET);
-	  	  HAL_GPIO_WritePin(GPIOA, LED_GREEN_Pin, SET);
-
-		  HAL_GPIO_WritePin(GPIOA, LED_RED1_Pin, SET);
-		  HAL_GPIO_WritePin(GPIOA, LED_YELLOW1_Pin, RESET);
-		  HAL_GPIO_WritePin(GPIOA, LED_GREEN1_Pin, SET);
-		  display7Seg(2);
-		  HAL_Delay(1000);
-		  display7Seg(1);
-		  HAL_Delay(1000);
-		  /*----------*/
-		  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin, SET);
-		  HAL_GPIO_WritePin(GPIOA, LED_YELLOW_Pin, SET);
-		  HAL_GPIO_WritePin(GPIOA, LED_GREEN_Pin, RESET);
-
-		  HAL_GPIO_WritePin(GPIOA, LED_RED1_Pin, RESET);
-		  HAL_GPIO_WritePin(GPIOA, LED_YELLOW1_Pin, SET);
-		  HAL_GPIO_WritePin(GPIOA, LED_GREEN1_Pin, SET);
-		  display7Seg(3);
-		  HAL_Delay(1000);
-		  display7Seg(2);
-		  HAL_Delay(1000);
-		  display7Seg(1);
-		  HAL_Delay(1000);
-		  /*----------*/
-		  HAL_GPIO_WritePin(GPIOA, LED_RED_Pin, SET);
-		  HAL_GPIO_WritePin(GPIOA, LED_YELLOW_Pin, RESET);
-		  HAL_GPIO_WritePin(GPIOA, LED_GREEN_Pin, SET);
-
-		  HAL_GPIO_WritePin(GPIOA, LED_RED1_Pin, RESET);
-		  HAL_GPIO_WritePin(GPIOA, LED_YELLOW1_Pin, SET);
-		  HAL_GPIO_WritePin(GPIOA, LED_GREEN1_Pin, SET);
-		  display7Seg(2);
-		  HAL_Delay(1000);
-		  display7Seg(1);
-		  HAL_Delay(1000);
-	 	  }
+	  if (counter >= 10) counter = 0;
+	  display7Seg(counter++);
+	  HAL_Delay(1000);
+	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
